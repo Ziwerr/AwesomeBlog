@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeBlog.Api", "AwesomeBlog.Api\AwesomeBlog.Api.csproj", "{573BB446-80EA-4887-A683-8246F35FBA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeBlog.Model", "AwesomeBlog.Model\AwesomeBlog.Model.csproj", "{D5977771-8D46-4BE5-A4BF-90444113585E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeBlog.Infrastructure", "AwesomeBlog.Infrastructure\AwesomeBlog.Infrastructure.csproj", "{6FA342B4-89DF-4233-92A0-8AF31760BC49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{573BB446-80EA-4887-A683-8246F35FBA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573BB446-80EA-4887-A683-8246F35FBA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573BB446-80EA-4887-A683-8246F35FBA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573BB446-80EA-4887-A683-8246F35FBA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5977771-8D46-4BE5-A4BF-90444113585E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5977771-8D46-4BE5-A4BF-90444113585E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5977771-8D46-4BE5-A4BF-90444113585E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5977771-8D46-4BE5-A4BF-90444113585E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA342B4-89DF-4233-92A0-8AF31760BC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA342B4-89DF-4233-92A0-8AF31760BC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA342B4-89DF-4233-92A0-8AF31760BC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA342B4-89DF-4233-92A0-8AF31760BC49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\bin\Debug\netcoreapp3.1\AwesomeBlog.Model.deps.json
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\bin\Debug\netcoreapp3.1\AwesomeBlog.Model.dll
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\bin\Debug\netcoreapp3.1\AwesomeBlog.Model.pdb
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.csprojAssemblyReference.cache
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.AssemblyInfoInputs.cache
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.AssemblyInfo.cs
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.csproj.CoreCompileInputs.cache
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.dll
+C:\Users\barto\BartoProjects\AwesomeBlog\AwesomeBlog.Model\obj\Debug\netcoreapp3.1\AwesomeBlog.Model.pdb
