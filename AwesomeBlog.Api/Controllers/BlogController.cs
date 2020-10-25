@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AwesomeBlog.Api.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "User")]
     [Route("[controller]")]
     public class BlogController : ControllerBase
     {

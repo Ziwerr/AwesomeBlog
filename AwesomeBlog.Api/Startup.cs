@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Security.Claims;
 using System.Text;
 using AwesomeBlog.Api.Settings;
 using AwesomeBlog.Infrastructure;
@@ -40,18 +41,25 @@ namespace AwesomeBlog.Api
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
+                        RoleClaimType = ClaimTypes.Gender,
                         ValidIssuer = jwtSettings.ValidIssuer,
                         ValidAudience = jwtSettings.ValidAudience,
-                        ValidateAudience = false,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret))
                     };
                 });
             
-            
             services.AddSingleton(provider => new DatabaseContext("mongodb://localhost:27017"));
             services.AddSingleton<BlogRepository>();
+            services.AddSingleton<UserRepository>();
             
             services.AddSwaggerGen();
+            
+            // 1. Model danych
+            // - Custom
+            // - Identity Model
+            // 2. Podejście
+            // - Own 
+            // - Central
             
             EntityMappings.Map();
         }
