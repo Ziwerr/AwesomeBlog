@@ -2,10 +2,11 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 using AwesomeBlog.Api.Settings;
 using AwesomeBlog.Api.ViewModels;
 using AwesomeBlog.Infrastructure;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AwesomeBlog.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
@@ -23,7 +24,7 @@ namespace AwesomeBlog.Api.Controllers
            }
            
            [HttpPost]
-           public ActionResult Create([FromBody]CreateUserViewModel createUserViewModel)
+           public async Task<ActionResult> Create([FromBody]CreateUserViewModel createUserViewModel)
            {
                // 1. Hashowanie
                // jan - password - admin -> jdasodaokdsaokcmasdoj
@@ -32,21 +33,25 @@ namespace AwesomeBlog.Api.Controllers
 
                var hashed = BCrypt.Net.BCrypt.HashPassword(createUserViewModel.Password);
                
-               return Ok(new
-               {
-                   pass = hashed,
-                   ver = BCrypt.Net.BCrypt.Verify(createUserViewModel.Password, hashed)
-               });
+               var user = new User(Guid.NewGuid(),createUserViewModel.UserName,hashed);
 
+               await _userRepository.Create(user);
+
+               return Ok();
            }
            
            [HttpPost("login")]
-           public ActionResult Login([FromForm] LoginViewModel loginViewModel)
+           public async Task<ActionResult> Login([FromForm] LoginViewModel loginViewModel)
            {
                //1. Sprawdzenie hasła uzytkownika
                //2. Wygenerowanie tokena
 
-               if (loginViewModel.Password != "password")
+               var user = await _userRepository.GetUser(loginViewModel.UserName);
+
+               if (user is null)
+                   return BadRequest();
+
+               if (!BCrypt.Net.BCrypt.Verify(loginViewModel.Password, user.Password))
                {
                    return BadRequest();
                }
@@ -60,7 +65,6 @@ namespace AwesomeBlog.Api.Controllers
                         {
                             new Claim(JwtRegisteredClaimNames.Sub, loginViewModel.UserName),
                             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                            //new Claim("blog","awesome"),
                             new Claim(ClaimTypes.Role,"Admin"),
                             new Claim(ClaimTypes.Role,"User"),
                         }
